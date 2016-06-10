@@ -96,24 +96,26 @@ int main(int argc, char *argv[])
 					   // Get the properties from the camera
 	double width_1 = cam_1.get(CV_CAP_PROP_FRAME_WIDTH);
 	double height_1 = cam_1.get(CV_CAP_PROP_FRAME_HEIGHT);
-
+	int fps_1 = cam_1.get(CV_CAP_PROP_FPS);
+	
 	double width_2 = cam_2.get(CV_CAP_PROP_FRAME_WIDTH);
 	double height_2 = cam_2.get(CV_CAP_PROP_FRAME_HEIGHT);
+	int fps_2 = cam_2.get(CV_CAP_PROP_FPS);
 
 	// print camera frame size
 	cout << "Camera 1 properties" << endl;
-	cout << "width = " << width_1 << endl << "height = " << height_1 << endl;
+	cout << "fps = " << fps_1 << endl << "width = " << width_1 << endl << "height = " << height_1 << endl;
 
 	cout << "Camera 2 properties" << endl;
-	cout << "width = " << width_2 << endl << "height = " << height_2 << endl;
+	cout << "fps = " << fps_2 << endl << "width = " << width_2 << endl << "height = " << height_2 << endl;
 
 
 	// Create a matrix to keep the retrieved frame
 	Mat frame_1, frame_2;
 
 	// Create the video writer
-	VideoWriter video_1("cam_1.avi", CV_FOURCC('D', 'I', 'V', 'X'), framerate, Size((int)width_1, (int)height_1));
-	VideoWriter video_2("cam_2.avi", CV_FOURCC('D', 'I', 'V', 'X'), framerate, Size((int)width_2, (int)height_2));
+	VideoWriter video_1("resources/cam_1.avi", CV_FOURCC('D', 'I', 'V', 'X'), framerate, Size((int)width_1, (int)height_1));
+	VideoWriter video_2("resources/cam_2.avi", CV_FOURCC('D', 'I', 'V', 'X'), framerate, Size((int)width_2, (int)height_2));
 
 	if (!video_1.isOpened() || !video_2.isOpened()) {
 		cout << "error opening file!" << endl;
@@ -146,7 +148,7 @@ int main(int argc, char *argv[])
 		video_2 << frame_2;
 
 		//write previous and current frame timestamp to console
-		cout << nextFrameTimestamp << " " << currentFrameTimestamp << " ";
+		//cout << nextFrameTimestamp << " " << currentFrameTimestamp << " ";
 
 		// add 1second/framerate time for next loop pause
 		nextFrameTimestamp = nextFrameTimestamp + microsec(1000000 / framerate);
@@ -161,7 +163,7 @@ int main(int argc, char *argv[])
 		finalLoopTimestamp = microsec_clock::local_time();
 		td1 = (finalLoopTimestamp - initialLoopTimestamp);
 		delayFound = td1.total_milliseconds();
-		cout << delayFound << endl;
+		//cout << delayFound << endl;
 
 		//output will be in following format
 		//[TIMESTAMP OF PREVIOUS FRAME] [TIMESTAMP OF NEW FRAME] [TIME DELAY OF WRITING]

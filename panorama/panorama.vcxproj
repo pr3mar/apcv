@@ -18,27 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\cathedral.jpg" />
-    <Image Include="resources\cathedral1.jpg" />
-    <Image Include="resources\cathedral2.jpg" />
-    <Image Include="resources\cathedral3.jpg" />
-    <Image Include="resources\cathedral4.jpg" />
-    <Image Include="resources\chessboard.jpg" />
-    <Image Include="resources\circles.jpg" />
-    <Image Include="resources\marker.png" />
-    <Image Include="tmp.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="resources\webcam.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="view_frames.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A8C34F0B-1990-46B0-8FE8-538CDBE7DAA8}</ProjectGuid>
+    <ProjectGuid>{AD0BB87B-7EE9-4E4C-B8E1-41409CB79131}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>test_opencv</RootNamespace>
+    <RootNamespace>panorama</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,7 +71,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\boost32\include\boost-1_61\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -101,23 +83,17 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\opencv31\build\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalUsingDirectories>C:\opencv31\build\install\include\opencv;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\opencv31\build\install\x86\vc14\lib;D:\boost32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_aruco310d.lib;opencv_bgsegm310d.lib;opencv_calib3d310d.lib;opencv_ccalib310d.lib;opencv_core310d.lib;opencv_datasets310d.lib;opencv_dnn310d.lib;opencv_dpm310d.lib;opencv_face310d.lib;opencv_features2d310d.lib;opencv_flann310d.lib;opencv_fuzzy310d.lib;opencv_highgui310d.lib;opencv_imgcodecs310d.lib;opencv_imgproc310d.lib;opencv_line_descriptor310d.lib;opencv_ml310d.lib;opencv_objdetect310d.lib;opencv_optflow310d.lib;opencv_photo310d.lib;opencv_plot310d.lib;opencv_reg310d.lib;opencv_rgbd310d.lib;opencv_saliency310d.lib;opencv_shape310d.lib;opencv_stereo310d.lib;opencv_stitching310d.lib;opencv_structured_light310d.lib;opencv_superres310d.lib;opencv_surface_matching310d.lib;opencv_text310d.lib;opencv_tracking310d.lib;opencv_ts310d.lib;opencv_video310d.lib;opencv_videoio310d.lib;opencv_videostab310d.lib;opencv_xfeatures2d310d.lib;opencv_ximgproc310d.lib;opencv_xobjdetect310d.lib;opencv_xphoto310d.lib;boost_atomic-vc140-mt-gd-1_61.lib;boost_chrono-vc140-mt-gd-1_61.lib;boost_container-vc140-mt-gd-1_61.lib;boost_context-vc140-mt-gd-1_61.lib;boost_coroutine-vc140-mt-gd-1_61.lib;boost_date_time-vc140-mt-gd-1_61.lib;boost_filesystem-vc140-mt-gd-1_61.lib;boost_graph-vc140-mt-gd-1_61.lib;boost_iostreams-vc140-mt-gd-1_61.lib;boost_locale-vc140-mt-gd-1_61.lib;boost_log-vc140-mt-gd-1_61.lib;boost_log_setup-vc140-mt-gd-1_61.lib;boost_math_c99-vc140-mt-gd-1_61.lib;boost_math_c99f-vc140-mt-gd-1_61.lib;boost_math_c99l-vc140-mt-gd-1_61.lib;boost_math_tr1-vc140-mt-gd-1_61.lib;boost_math_tr1f-vc140-mt-gd-1_61.lib;boost_math_tr1l-vc140-mt-gd-1_61.lib;boost_prg_exec_monitor-vc140-mt-gd-1_61.lib;boost_program_options-vc140-mt-gd-1_61.lib;boost_python-vc140-mt-gd-1_61.lib;boost_python3-vc140-mt-gd-1_61.lib;boost_random-vc140-mt-gd-1_61.lib;boost_regex-vc140-mt-gd-1_61.lib;boost_serialization-vc140-mt-gd-1_61.lib;boost_signals-vc140-mt-gd-1_61.lib;boost_system-vc140-mt-gd-1_61.lib;boost_thread-vc140-mt-gd-1_61.lib;boost_timer-vc140-mt-gd-1_61.lib;boost_type_erasure-vc140-mt-gd-1_61.lib;boost_unit_test_framework-vc140-mt-gd-1_61.lib;boost_wave-vc140-mt-gd-1_61.lib;boost_wserialization-vc140-mt-gd-1_61.lib;libboost_atomic-vc140-mt-gd-1_61.lib;libboost_chrono-vc140-mt-gd-1_61.lib;libboost_container-vc140-mt-gd-1_61.lib;libboost_context-vc140-mt-gd-1_61.lib;libboost_coroutine-vc140-mt-gd-1_61.lib;libboost_date_time-vc140-mt-gd-1_61.lib;libboost_exception-vc140-mt-gd-1_61.lib;libboost_filesystem-vc140-mt-gd-1_61.lib;libboost_graph-vc140-mt-gd-1_61.lib;libboost_iostreams-vc140-mt-gd-1_61.lib;libboost_locale-vc140-mt-gd-1_61.lib;libboost_log-vc140-mt-1_61.lib;libboost_log-vc140-mt-gd-1_61.lib;libboost_log_setup-vc140-mt-gd-1_61.lib;libboost_math_c99-vc140-mt-gd-1_61.lib;libboost_math_c99f-vc140-mt-gd-1_61.lib;libboost_math_c99l-vc140-mt-gd-1_61.lib;libboost_math_tr1-vc140-mt-gd-1_61.lib;libboost_math_tr1f-vc140-mt-gd-1_61.lib;libboost_math_tr1l-vc140-mt-gd-1_61.lib;libboost_prg_exec_monitor-vc140-mt-gd-1_61.lib;libboost_program_options-vc140-mt-gd-1_61.lib;libboost_python-vc140-mt-gd-1_61.lib;libboost_python3-vc140-mt-gd-1_61.lib;libboost_random-vc140-mt-gd-1_61.lib;libboost_regex-vc140-mt-gd-1_61.lib;libboost_serialization-vc140-mt-gd-1_61.lib;libboost_signals-vc140-mt-gd-1_61.lib;libboost_system-vc140-mt-gd-1_61.lib;libboost_test_exec_monitor-vc140-mt-gd-1_61.lib;libboost_thread-vc140-mt-gd-1_61.lib;libboost_timer-vc140-mt-gd-1_61.lib;libboost_type_erasure-vc140-mt-gd-1_61.lib;libboost_unit_test_framework-vc140-mt-gd-1_61.lib;libboost_wave-vc140-mt-gd-1_61.lib;libboost_wserialization-vc140-mt-gd-1_61.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
-    <ProjectReference>
-      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
-    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -169,6 +145,9 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="panorama.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

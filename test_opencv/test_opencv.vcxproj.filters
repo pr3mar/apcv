@@ -52,7 +52,7 @@
     </Xml>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="boost.cpp">
+    <ClCompile Include="view_frames.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
